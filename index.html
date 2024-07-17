@@ -79,7 +79,7 @@
     </p>
     <p><button class="cal"
             onclick="calculation='',localStorage.setItem('calculation',''),displavalue(0)" style="font-size: 1.2rem;">clear</button>
-        <button class="cal" onclick="calculation=calculation.slice(0,-1),displavalue(0)" style="font-size: 1.2rem;">back</button>
+        <button class="cal" onclick="calculation=calculation.slice(0,-1),displavalue(calculation||0)" style="font-size: 1.2rem;">back</button>
     </p>
 </div>
     <script>
