@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+        .flx{
+            display: inline-block;
+            align-self: center;
+            margin-top: 5rem;
+
+        }
+        .cal{
+            height: 4rem;
+            width: 4rem;
+            border: none;
+            border-radius: 2rem;
+            background-color:rgba(12,15,18,20);
+            color: white;
+            font-size: 1.7rem;
+            vertical-align: middle;
+        }
+        .evl{
+            height: 4rem;
+            width: 4rem;
+            border: none;
+            border-radius: 2rem;
+            background-color:rgb(255, 115, 0);
+            color: white;
+            font-size: 1.7rem;
+            vertical-align: middle;
+        }
+        .res{
+            font-size: 2rem;
+            margin-bottom: -3px;
+            border: none;
+            box-shadow: 0 0 5px rgba(100, 100, 100, 1);
+            padding-left:14px;
+            border-radius:13px ;
+            width: 15.84rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flx">
+    <p class="res"><hr style="border-color: darkgray;border-radius: 30px; margin: 0 0.3rem;"/></p>
+    <p>
+        <button class="cal" onclick="cl('1')">1</button>
+        <button class="cal" onclick="cl('2')">2</button>
+        <button class="cal" onclick="cl('3')">3</button>
+        <button class="evl" onclick="cl('+')">+</button>
+    </p>
+    <p>
+        <button class="cal" onclick="cl('4')">4</button>
+        <button class="cal" onclick="cl('5')">5</button>
+        <button class="cal" onclick="cl('6')">6</button>
+        <button class="evl" onclick="cl('-')">-</button>
+    </p>
+    <p>
+        <button class="cal" onclick="cl('7')">7</button>
+        <button class="cal" onclick="cl('8')">8</button>
+        <button class="cal" onclick="cl('9')">9</button>
+        <button class="evl" onclick="cl('*')">*</button>
+    </p>
+    <p>
+        <button class="cal" onclick="cl('0')">0</button>
+        <button class="cal" onclick="cl('.')">.</button>
+        <button class="cal" onclick="calculation=eval(calculation),displavalue(calculation)">=</button>
+        <button class="evl" onclick="cl('/')">/</button>
+    </p>
+    <p><button class="cal"
+            onclick="calculation='',localStorage.setItem('calculation',''),displavalue(calculation)" style="font-size: 1.2rem;">clear</button>
+        <button class="cal" onclick="calculation=calculation.slice(0,-1),displavalue(calculation)" style="font-size: 1.2rem;">back</button>
+    </p>
+</div>
+    <script>
+        let calculation = localStorage.getItem('calculation') || '';
+        function cl(k) {
+            calculation += k;
+            displavalue(calculation);
+            localStorage.setItem('calculation', calculation);
+        }
+        function displavalue(calculation) {
+            document.querySelector(".res").innerHTML = calculation;
+        }
+        console.log(localStorage)
+
+    </script>
+</body>
+
+</html>
