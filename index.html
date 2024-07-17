@@ -52,7 +52,7 @@
 
 <body>
     <div class="flx">
-    <p class="res"><hr style="border-color: darkgray;border-radius: 30px; margin: 0 0.3rem;"/></p>
+    <p class="res">0<hr style="border-color: darkgray;border-radius: 30px; margin: 0 0.3rem;"/></p>
     <p>
         <button class="cal" onclick="cl('1')">1</button>
         <button class="cal" onclick="cl('2')">2</button>
@@ -78,7 +78,7 @@
         <button class="evl" onclick="cl('/')">/</button>
     </p>
     <p><button class="cal"
-            onclick="calculation='',localStorage.setItem('calculation',''),displavalue(calculation)" style="font-size: 1.2rem;">clear</button>
+            onclick="calculation='',localStorage.setItem('calculation',''),displavalue(0)" style="font-size: 1.2rem;">clear</button>
         <button class="cal" onclick="calculation=calculation.slice(0,-1),displavalue(calculation)" style="font-size: 1.2rem;">back</button>
     </p>
 </div>
